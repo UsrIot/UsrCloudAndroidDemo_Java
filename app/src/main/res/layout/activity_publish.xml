@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pub_tv_cleanmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/cleanmsg"
+        android:textColor="@color/red" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/pub_tv_showmsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="" />
+    </ScrollView>
+
+
+    <Spinner
+        android:id="@+id/pub_sp_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/publishmode">
+
+
+    </Spinner>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:text="00007867000000000001"
+            android:id="@+id/pub_et_modemsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/devid" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <EditText
+
+                android:id="@+id/pub_et_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/data" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/pub_btn_pubdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/publishdata" />
+
+    </LinearLayout>
+
+</LinearLayout>

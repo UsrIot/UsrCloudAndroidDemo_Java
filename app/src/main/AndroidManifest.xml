@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.usr.usrcloudmqttsdkdemo">
+
+
+    <!-- MQTT权限 -->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:allowBackup="true"
+        android:name=".base.UsrApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.ConnectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".base.UsrBaseActivity" />
+        <activity android:name=".view.PublishActivity" />
+        <activity android:name=".view.SubscribeActivity" />
+        <activity android:name=".view.MainActivity"/>
+        <activity android:name=".view.SubscribeParseActivity"/>
+        <activity android:name=".view.PublishParseActivity"/>
+        <service android:name=".business.UsrCloudClientService"/>
+    </application>
+
+</manifest>

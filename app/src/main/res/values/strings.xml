@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">usrcloudmqttclientdemo</string>
+    <string name="connect">连接</string>
+    <string name="disconnect">取消连接</string>
+    <string name="uname">用户名</string>
+    <string name="upw">密码</string>
+    <string name="devid">设备ID</string>
+    <string name="devidoruname">设备ID/用户名</string>
+    <string name="data">推送的数据</string>
+    <string name="pointId">数据点ID</string>
+    <string name="pointValue">设置的值</string>
+    <string name="subscribefordevid">订阅单个设备</string>
+    <string name="subscribe">订阅(数据流)</string>
+    <string name="subscribe_parse">订阅(Json)</string>
+    <string name="issubscribe">订阅回调标识</string>
+    <string name="subscribeforuname">订阅账户下的所有设备</string>
+    <string name="dissubscribefordevid">取消订阅单个设备</string>
+    <string name="dissubscribeforuname">取消订阅账户下的所有设备</string>
+    <string name="publishfordevid">向单个设备推送</string>
+    <string name="publishdata">推送数据</string>
+    <string name="setdataPoint">设置</string>
+    <string name="querydataPoint">查询</string>
+    <string name="publish">发布(数据流)</string>
+    <string name="publish_parse">发布(Json)</string>
+    <string name="publishforuname">向账户下的所有设备推送</string>
+    <string name="alertinfo">请输入内容</string>
+    <string name="suresubmit">提交操作</string>
+    <string name="cleanmsg">清空屏幕</string>
+    <string name="cloudRaw">云交换机操作</string>
+    <string name="cloudParse">云组态操作</string>
+    <array name="publishmode">
+
+        <item>设备</item>
+        <item>账户</item>
+
+    </array>
+    <array name="subsribemode">
+        <item>订阅单个设备($USR/DevTx/Id)</item>
+        <item>取消单个订阅($USR/DevTx/Id)</item>
+        <item>订阅账号下的全部设备($USR/Dev2App/帐号/+)</item>
+        <item>取消订阅账号下的全部设备($USR/Dev2App/帐号/+)</item>
+    </array>
+
+    <array name="subsribemode_parse">
+        <item>订阅指定设备JSON格式数据($USR/DevJsonTx/Id)</item>
+        <item>取消订阅设备JSON格式数据($USR/DevJsonTx/Id)</item>
+        <item>订阅账号下全部设备监控状态($USR/JsonTx/帐号/+)</item>
+        <item>取消订阅账号下的全部设备监控状态($USR/JsonTx/帐号/+)</item>
+    </array>
+
+</resources>

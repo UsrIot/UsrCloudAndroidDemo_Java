@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/pub_tv_parse_cleanmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/cleanmsg"
+        android:textColor="@color/red" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/pub_tv_parse_showmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="" />
+    </ScrollView>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:text="00007867000000000001"
+            android:id="@+id/pub_et_parse_devid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/devid" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/pub_et_parse_query_pointid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pointId" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/pub_btn_parse_query_pubdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:text="@string/querydataPoint"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/pub_et_parse_set_pointid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pointId" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/pub_et_parse_set_pointvalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pointValue" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/pub_btn_parse_set_pubdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:text="@string/setdataPoint"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

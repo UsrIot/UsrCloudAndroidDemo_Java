@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Spinner
+        android:id="@+id/sub_sp_submode"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:entries="@array/subsribemode"></Spinner>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:text="00007867000000000001"
+            android:id="@+id/sub_et_submsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/devid" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/sub_btn_suresub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/suresubmit" />
+
+
+    <TextView
+        android:id="@+id/sub_tv_cleanmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:text="@string/cleanmsg"
+        android:textColor="@color/red" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/sub_tv_receiverdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+
+    </ScrollView>
+
+
+</LinearLayout>

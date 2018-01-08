@@ -16,10 +16,6 @@ public class UsrCloudClient extends UsrCloudMqttClientAdapter {
         super.Connect(userName, passWord);
     }
 
-    @Override
-    public boolean DisConnect() {
-        return super.DisConnect();
-    }
 
 
     @Override

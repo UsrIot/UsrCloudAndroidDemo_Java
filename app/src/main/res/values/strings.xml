@@ -5,6 +5,8 @@
     <string name="uname">用户名</string>
     <string name="upw">密码</string>
     <string name="devid">设备ID</string>
+    <string name="slaveIndex">从机序号</string>
+    <string name="slaveAddr">从机地址</string>
     <string name="devidoruname">设备ID/用户名</string>
     <string name="data">推送的数据</string>
     <string name="pointId">数据点ID</string>

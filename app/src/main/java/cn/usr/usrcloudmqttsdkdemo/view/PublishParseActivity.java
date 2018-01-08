@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
 
+import org.apache.commons.lang.StringUtils;
+
 import cn.usr.usrcloudmqttsdkdemo.R;
 import cn.usr.usrcloudmqttsdkdemo.base.UsrBaseActivity;
 import cn.usr.usrcloudmqttsdkdemo.business.UsrCloudClientService;
@@ -41,6 +43,10 @@ public class PublishParseActivity extends UsrBaseActivity implements View.OnClic
     private EditText pub_et_parse_set_pointvalue;
     private EditText pub_et_parse_query_pointid;
     private EditText pub_et_parse_devid;
+    private EditText pub_et_parse_slaveIndex;
+    private EditText pub_et_parse_slaveAddr;
+
+
     private Button pub_btn_parse_query_pubdata;
     private Button pub_btn_parse_set_pubdata;
 
@@ -97,6 +103,10 @@ public class PublishParseActivity extends UsrBaseActivity implements View.OnClic
         pub_et_parse_set_pointid = (EditText) findViewById(R.id.pub_et_parse_set_pointid);
         pub_et_parse_set_pointvalue = (EditText) findViewById(R.id.pub_et_parse_set_pointvalue);
         pub_et_parse_query_pointid = (EditText) findViewById(R.id.pub_et_parse_query_pointid);
+
+        pub_et_parse_slaveIndex = (EditText) findViewById(R.id.pub_et_parse_slaveIndex);
+        pub_et_parse_slaveAddr = (EditText) findViewById(R.id.pub_et_parse_slaveAddr);
+
         pub_btn_parse_query_pubdata = (Button) findViewById(R.id.pub_btn_parse_query_pubdata);
         pub_btn_parse_set_pubdata = (Button) findViewById(R.id.pub_btn_parse_set_pubdata);
 
@@ -118,32 +128,36 @@ public class PublishParseActivity extends UsrBaseActivity implements View.OnClic
         switch (view.getId()) {
             case R.id.pub_btn_parse_query_pubdata:
                 String devid = pub_et_parse_devid.getText().toString().trim();
+                String slaveIndex = pub_et_parse_slaveIndex.getText().toString().trim();
+                String slaveAddr = pub_et_parse_slaveAddr.getText().toString().trim();
                 String pointId = pub_et_parse_query_pointid.getText().toString().trim();
-                if (!devid.equals("") && !pointId.equals("")) {
-                    if (!sts.equals("")) {
+                if (StringUtils.isEmpty(devid) || StringUtils.isEmpty(slaveIndex) || StringUtils.isEmpty(slaveAddr) || StringUtils.isEmpty(pointId)) {
+                    showToast("请先填写信息");
+                } else {
+                    if (!StringUtils.isEmpty(sts)) {
                         myService.doDisSubscribeParsedforDevId(sts);
                     }
-                    myService.publishParsedQueryDataPoint(devid, pointId);
+                    myService.publishParsedQueryDataPoint(devid, slaveIndex, slaveAddr, pointId);
                     sts = devid;
                     myService.doSubscribeParsedByDevId(devid);
-                } else {
-                    showToast("请先填写信息");
                 }
                 break;
             case R.id.pub_btn_parse_set_pubdata:
                 String set_devid = pub_et_parse_devid.getText().toString().trim();
+                String set_slaveIndex = pub_et_parse_slaveIndex.getText().toString().trim();
+                String set_slaveAddr = pub_et_parse_slaveAddr.getText().toString().trim();
                 String set_pointId = pub_et_parse_set_pointid.getText().toString().trim();
                 String set_pointValue = pub_et_parse_set_pointvalue.getText().toString().trim();
-                if (!set_devid.equals("") && !set_pointId.equals("") && !set_pointValue.equals("")) {
-                    if (!sts.equals("")) {
+                if (StringUtils.isEmpty(set_devid) || StringUtils.isEmpty(set_slaveIndex) || StringUtils.isEmpty(set_slaveAddr) || StringUtils.isEmpty(set_pointId) || StringUtils.isEmpty(set_pointValue)) {
+                    showToast("请先填写信息");
+                } else {
+                    if (!StringUtils.isEmpty(sts)) {
                         myService.doDisSubscribeParsedforDevId(sts);
                     }
                     myService.doSubscribeParsedByDevId(set_devid);
-                    myService.publishParsedSetDataPoint(set_devid, set_pointId, set_pointValue);
+                    myService.publishParsedSetDataPoint(set_devid, set_slaveIndex, set_slaveAddr, set_pointId, set_pointValue);
                     sts = set_devid;
                     myService.doSubscribeParsedByDevId(set_devid);
-                } else {
-                    showToast("请先填写信息");
                 }
                 break;
             case R.id.pub_tv_parse_cleanmsg:

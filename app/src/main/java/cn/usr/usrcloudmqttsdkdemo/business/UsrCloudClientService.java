@@ -169,22 +169,22 @@ public class UsrCloudClientService extends Service {
         }
     }
 
-    public void publishParsedQueryDataPoint(String devId, String pointId) {
+    public void publishParsedQueryDataPoint(String devId, String slaveIndex, String slaveAddr, String pointId) {
         if (isConnectIsNomarl()) {
             try {
                 usrCloudClient.setUsrCloudMqttCallback(usrCloudClientCallback);
-                usrCloudClient.publishParsedQueryDataPoint(devId, pointId);
+                usrCloudClient.publishParsedQueryDataPoint(devId, slaveIndex, slaveAddr, pointId);
             } catch (MqttException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void publishParsedSetDataPoint(String devId, String pointId, String value) {
+    public void publishParsedSetDataPoint(String devId, String slaveIndex, String slaveAddr, String pointId, String value) {
         if (isConnectIsNomarl()) {
             try {
                 usrCloudClient.setUsrCloudMqttCallback(usrCloudClientCallback);
-                usrCloudClient.publishParsedSetDataPoint(devId, pointId, value);
+                usrCloudClient.publishParsedSetDataPoint(devId, slaveIndex, slaveAddr, pointId, value);
             } catch (MqttException e) {
                 e.printStackTrace();
 
@@ -206,10 +206,15 @@ public class UsrCloudClientService extends Service {
 
     public boolean doDisConnect() {
         if (isConnectIsNomarl()) {
-            return usrCloudClient.DisConnect();
+            try {
+                return usrCloudClient.DisConnectUnCheck();
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
         }
         return false;
     }
+
     public boolean DisConnectUnCheck() throws MqttException {
         if (isConnectIsNomarl()) {
             return usrCloudClient.DisConnectUnCheck();

@@ -33,20 +33,6 @@ public class UsrCloudClientCallback extends UsrCloudMqttCallbackAdapter {
     }
 
 
-    @Override
-    public void onSubscribeAck(int messageId, String devId, int returnCode) {
-        super.onSubscribeAck(messageId, devId, returnCode);
-//        Log.d(TAG, messageId + "\n" + devId + "\n" + returnCode);
-//        Intent intent = new Intent();
-//        Bundle bundle = new Bundle();
-//        intent.setAction("onSubscribeAck");//用隐式意图来启动广播
-//        bundle.putInt("messageId", messageId);
-//        bundle.putString("CliendID", devId);
-//        bundle.putInt("returnCode", returnCode);
-//        intent.putExtras(bundle);
-//        mcontext.sendBroadcast(intent);
-    }
-
 
     @Override
     public void onSubscribeAck(int messageId, String clientId, String topics, int returnCode) {
@@ -129,33 +115,9 @@ public class UsrCloudClientCallback extends UsrCloudMqttCallbackAdapter {
         mcontext.sendBroadcast(intent);
     }
 
-    @Override
-    public void onPublishDataAck(int messageId, boolean isSuccess) {
-//        Log.d(TAG, messageId + "\n" + isSuccess);
-//        Intent intent = new Intent();
-//        intent.setAction("onPublishDataAck");//用隐式意图来启动广播
-//        Bundle bundle = new Bundle();
-//        bundle.putInt("messageId", messageId);
-//        bundle.putBoolean("isSuccess", isSuccess);
-//        intent.putExtras(bundle);
-//        mcontext.sendBroadcast(intent);
-//        super.onPublishDataAck(messageId, isSuccess);
-    }
 
 
-    @Override
-    public void onDisSubscribeAck(int messageId, String devId, int returnCode) {
-//        super.onDisSubscribeAck(messageId, devId, returnCode);
-//        Log.d(TAG, "onDisSubscribeAck" + messageId + "\n" + devId + "\n" + returnCode);
-//        Intent intent = new Intent();
-//        Bundle bundle = new Bundle();
-//        intent.setAction("onDisSubscribeAck");//用隐式意图来启动广播
-//        bundle.putInt("messageId", messageId);
-//        bundle.putString("CliendID", devId);
-//        bundle.putInt("returnCode", returnCode);
-//        intent.putExtras(bundle);
-//        mcontext.sendBroadcast(intent);
-    }
+
 
 
 }

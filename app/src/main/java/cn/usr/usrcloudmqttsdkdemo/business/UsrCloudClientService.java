@@ -169,22 +169,22 @@ public class UsrCloudClientService extends Service {
         }
     }
 
-    public void publishParsedQueryDataPoint(String devId, String slaveIndex, String slaveAddr, String pointId) {
+    public void publishParsedQueryDataPoint(String devId, String slaveIndex, String pointId) {
         if (isConnectIsNomarl()) {
             try {
                 usrCloudClient.setUsrCloudMqttCallback(usrCloudClientCallback);
-                usrCloudClient.publishParsedQueryDataPoint(devId, slaveIndex, slaveAddr, pointId);
+                usrCloudClient.publishParsedQueryDataPoint(devId, slaveIndex, pointId);
             } catch (MqttException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void publishParsedSetDataPoint(String devId, String slaveIndex, String slaveAddr, String pointId, String value) {
+    public void publishParsedSetDataPoint(String devId, String slaveIndex,  String pointId, String value) {
         if (isConnectIsNomarl()) {
             try {
                 usrCloudClient.setUsrCloudMqttCallback(usrCloudClientCallback);
-                usrCloudClient.publishParsedSetDataPoint(devId, slaveIndex, slaveAddr, pointId, value);
+                usrCloudClient.publishParsedSetDataPoint(devId, slaveIndex,  pointId, value);
             } catch (MqttException e) {
                 e.printStackTrace();
 

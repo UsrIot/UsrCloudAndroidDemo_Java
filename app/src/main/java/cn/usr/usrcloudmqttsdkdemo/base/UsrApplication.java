@@ -43,14 +43,14 @@ public class UsrApplication extends Application {
 
     @Override
     public void onTerminate() {
-        // 程序终止的时候执行
+        //程序终止的时候执行
         Log.d(TAG, "EpcApplication-----------onTerminate程序终止的时候执行");
         super.onTerminate();
     }
 
     @Override
     public void onLowMemory() {
-        // 低内存的时候执行
+        //低内存的时候执行
         Log.d(TAG, "EpcApplication-----------onLowMemory低内存的时候执行");
         super.onLowMemory();
     }
